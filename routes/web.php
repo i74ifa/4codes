@@ -21,6 +21,10 @@ Route::prefix('dashboard')->name('dashboard.')->group(function() {
     Route::prefix('category')->name('category.')->group(function() {
         Route::post('create', [App\Http\Controllers\CategoryController::class, 'create'])->name('create');
     });
+
+    Route::prefix('products')->name('products.')->group(function() {
+        Route::post('create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
+    });
 });
 Route::get('/dashboard', function () {
     return view('dashboard');

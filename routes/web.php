@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('dashboard')->name('dashboard.')->group(function() {
+    Route::prefix('category')->name('category.')->group(function() {
+        Route::post('create', [App\Http\Controllers\CategoryController::class, 'create'])->name('create');
+    });
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

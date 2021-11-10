@@ -32139,6 +32139,7 @@ select {
 body {
   --tw-bg-opacity: 1;
   background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+  font-family: 'Cairo', sans-serif;
 }
 
 @media (min-width: 640px) {

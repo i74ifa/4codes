@@ -19,8 +19,23 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                ff
+            <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
+                <a href="{{ route('login') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-lg w-6" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg>
+                      <span>
+                        {{ __('Login') }}
+                    </span>
+                </a>
+                <a href="{{ route('register') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-lg w-6" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                      {{ __('Register') }}
+                  </span>
+              </a>
             </div>
 
             <!-- Hamburger -->
@@ -46,8 +61,8 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ 'd' }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ 'd' }}</div>
+                <div class="font-medium text-base text-gray-800">{{ __('Log in') }}</div>
+                <div class="font-medium text-sm text-gray-500">{{ 'Register' }}</div>
             </div>
 
             <div class="mt-3 space-y-1">

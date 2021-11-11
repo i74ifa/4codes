@@ -17961,6 +17961,10 @@ select {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
+.bg-banner {
+  background-image: url('/img/banner.jpg');
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -32140,6 +32144,40 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
   font-family: 'Cairo', sans-serif;
+}
+
+.container-sm {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container-sm {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-sm {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-sm {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-sm {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-sm {
+    max-width: 1536px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -49264,6 +49302,10 @@ body {
 
   .sm\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .sm\:bg-banner {
+    background-image: url('/img/banner.jpg');
   }
 
   .sm\:from-transparent {
@@ -80553,6 +80595,10 @@ body {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .md\:bg-banner {
+    background-image: url('/img/banner.jpg');
+  }
+
   .md\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -111838,6 +111884,10 @@ body {
 
   .lg\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .lg\:bg-banner {
+    background-image: url('/img/banner.jpg');
   }
 
   .lg\:from-transparent {
@@ -143127,6 +143177,10 @@ body {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .xl\:bg-banner {
+    background-image: url('/img/banner.jpg');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -174412,6 +174466,10 @@ body {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .\32xl\:bg-banner {
+    background-image: url('/img/banner.jpg');
   }
 
   .\32xl\:from-transparent {

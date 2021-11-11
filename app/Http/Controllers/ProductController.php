@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -33,5 +35,23 @@ class ProductController extends Controller
         return back();
 
 
+    }
+
+    public function all()
+    {
+        $products = Product::allProducts();
+        $categories = Category::all();
+
+        return view('welcome', compact('products', 'categories'));
+    }
+
+    public function delete($id)
+    {
+        // Product::find($id)->delete();
+
+
+        return response()->json([
+            'status' => __('delete Success')
+        ]);
     }
 }

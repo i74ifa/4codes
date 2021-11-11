@@ -75,6 +75,7 @@
     "Trash": "إزالة",
     "The": "ال",
     "All": "جميع",
+    "All Products": "جميع المنتجات",
     "Make QRCode": "انشاء QrCode",
     "Delete": "حذف",
     "add to Favorite": "إضافة الى المفضلة",
@@ -148,6 +149,16 @@
     "Showing": "تم عرض",
     "of": "من",
     "results": "الكلي",
-    "delete" : "حذف"
+    "delete" : "حذف",
+    "Source Code": "سورس كود",
+    "All Categories": "جميع الاقسام",
+    "add Category": "اضف قسم",
+    "Logo": "شعار",
+    "YER": "ر.ي",
+    "Search": "بحث",
+    "Enter name Source Code": "ادخل اسم السورس كود",
+    "Confirm": "تاكيد",
+    "Cancel": "الغاء",
+    "delete Success": "تم الحذف"
 
 }

@@ -26,7 +26,7 @@
                                   </svg>
                             </x-slot>
                         </x-card-event>
-                        <x-card-event :href="route('login')" :titleCard="__('Source Code')" class="border">
+                        <x-card-event :href="route('dashboard.products.createShow')" :titleCard="__('Source Code')" class="border">
                             <x-slot name="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-code w-10" viewBox="0 0 16 16">
                                     <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/>

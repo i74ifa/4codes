@@ -24,6 +24,7 @@ class ProductTest extends TestCase
             'title' => 'this is title',
             'image' => $file,
             'price' => 500,
+            'details' => 'details',
             'category_id' => 1,
         ]);
 

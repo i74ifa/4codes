@@ -29,6 +29,6 @@ switch ($color) {
 
 }
 @endphp
-<button {{ $attributes->merge(['type' => 'submit', 'class' => "py-1 px-4 text-white shadow-md $rounded focus:outline-none focus:ring-2  focus:ring-opacity-75 $color"]) }}>
+<a {{ $attributes->merge(['type' => 'submit', 'class' => "py-1 px-4 text-white shadow-md $rounded focus:outline-none focus:ring-2  focus:ring-opacity-75 $color"]) }}>
     {{ $slot }}
-</button>
+</a>

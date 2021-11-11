@@ -7,5 +7,8 @@ return [
     "Done checkout" => "سوف يتم اعلامك عند التحقق من النقود المحولة",
     "Thanks for Shopping" => 'شكرا لتسوق معنا',
     'Not reviewed' => 'لم يتم مراجعتها',
-    "are sure delete" => 'هل انت متاكد من حذف'
+    "are sure delete" => 'هل انت متاكد من حذف',
+    "content source code and about source code..." => " محتوى السورس و تفاصيله...",
+    "welcome" => 'السلام عليكم',
+    "intro" => 'مهتم بـ'
 ];

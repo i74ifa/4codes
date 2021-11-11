@@ -33,9 +33,8 @@
     "code": "كود",
     "Details": "تفاصيل",
     "Log Out": "تسجيل خروج",
-    "add Product": "اضافة منتج",
     "Orders": "الطلبات",
-    "Add Product": "إضافة منتج",
+    "Add Product": "إضافة عنصر",
     "Price": "السعر",
     "Description": "التفاصيل",
     "Colors": "الالوان",
@@ -159,6 +158,10 @@
     "Enter name Source Code": "ادخل اسم السورس كود",
     "Confirm": "تاكيد",
     "Cancel": "الغاء",
-    "delete Success": "تم الحذف"
+    "delete Success": "تم الحذف",
+    "Image Product": "صورة العرض",
+    "like": "مثل",
+    "like:": "مثل:",
+    "Title": "عنوان العنصر"
 
 }

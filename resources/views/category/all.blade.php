@@ -14,7 +14,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200" dir="rtl">
                     <h1 class="text-2xl text-center py-3">{{ __('All Categories') }}</h1>
-                    <div class="flex gap-x-2">
+                    <div class="flex gap-2 flex-wrap">
                         @foreach ($categories as $category)
                             <x-card-event :title-card="$category->name" class="border" :href="route('dashboard.category.byId', $category->id)">
                                 <x-slot name="icon">

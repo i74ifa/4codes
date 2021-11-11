@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\ProductController::class, 'all']);
 
-Route::prefix('dashboard')->name('dashboard.')->group(function() {
+Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(function() {
     Route::prefix('category')->name('category.')->group(function() {
         Route::get('create', [App\Http\Controllers\CategoryController::class, 'show'])->name('createShow');
         Route::get('all', [App\Http\Controllers\CategoryController::class, 'all'])->name('all');
@@ -26,11 +26,12 @@ Route::prefix('dashboard')->name('dashboard.')->group(function() {
 
     Route::prefix('products')->name('products.')->group(function() {
         Route::post('create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
+        Route::get('create', [App\Http\Controllers\ProductController::class, 'createShow'])->name('createShow');
         Route::post('delete/{id?}', [App\Http\Controllers\ProductController::class, 'delete'])->name('delete');
     });
+    Route::get('/', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

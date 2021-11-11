@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Sending;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pipeline\Pipeline;
@@ -12,7 +13,7 @@ class Product extends Model
 
 
     protected $fillable = [
-        'title', 'image', 'price', 'category_id'
+        'title', 'image', 'price', 'category_id', 'details'
     ];
 
 
@@ -31,5 +32,13 @@ class Product extends Model
         ])
         ->thenReturn()
         ->paginate(9);
+    }
+
+    public function sending()
+    {
+        return (new Sending)->url([
+            'title' => $this->title,
+            'id' => $this->id
+        ]);
     }
 }

@@ -16,21 +16,19 @@ class ProductController extends Controller
             'title' => 'required|string',
             'price' => 'integer|required',
             'category_id' => 'required',
+            'details' => 'required',
             'image' => 'nullable|file'
         ]);
-
-
+        // dd($request->input());
         $file = $request->file('image')->store('products');
-
-
 
         Product::create([
             'title' => $request->title,
             'price' => $request->price,
+            'details' => $request->details,
             'category_id' => $request->category_id,
             'image' => $file,
         ]);
-
 
         return back();
 
@@ -49,9 +47,14 @@ class ProductController extends Controller
     {
         // Product::find($id)->delete();
 
-
         return response()->json([
             'status' => __('delete Success')
         ]);
+    }
+
+    public function createShow()
+    {
+        $categories = Category::all();
+        return view('product.create', compact('categories'));
     }
 }

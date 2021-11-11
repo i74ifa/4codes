@@ -5,15 +5,15 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="/">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link href="/" :active="request()->routeIs('dashboard')">
+                        {{ env('APP_NAME') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
                 <a href="{{ route('login') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-lg w-6" viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-xl w-5" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       </svg>
                       <span>
@@ -29,7 +29,7 @@
                     </span>
                 </a>
                 <a href="{{ route('register') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-lg w-6" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-xl w-5" viewBox="0 0 16 16">
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                     </svg>
@@ -53,9 +53,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            {{-- <x-responsive-nav-link :href="route('dashboard.dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->

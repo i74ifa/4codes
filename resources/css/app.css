@@ -7,6 +7,11 @@ body {
     font-family: "Cairo", sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6,
+p, div, section, input, textarea, button, a {
+    font-family: "Cairo", sans-serif;
+}
+
 /* width */
 ::-webkit-scrollbar {
     @apply w-1.5;

@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('fonts/fontello.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/eva-icons.css') }}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('fonts/eva-icons/eva-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
@@ -23,8 +23,12 @@
     {{-- @paddleJS --}}
 </head>
 
+@php
+    $dir = (App::isLocale('ar') == 'ar') ? 'rtl' : 'ltr'
+@endphp
+
 <body class="bg-gradient-to-tr">
-    <div @if (App::isLocale('ar') == 'ar')  dir="rtl"  @endif>
+    <div dir="{{ $dir }}">
         <x-navbar></x-navbar>
         @isset ($header)
             <header class="bg-white shadow">
@@ -34,9 +38,10 @@
             </header>
         @endisset
     </div>
-    <div class="font-sans text-gray-900 antialiased" @if (App::isLocale('ar') == 'ar')  dir="rtl"  @endif>
+    <div class="font-sans text-gray-900 antialiased" dir="{{ $dir }}">
         {{ $slot }}
     </div>
+    @include('layouts.footer')
 </body>
 
 </html>

@@ -31,7 +31,10 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(functi
     });
     Route::get('/', function () {
         return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
+    })->name('dashboard');
+
+
+    Route::get('settings', [App\Http\Controllers\DashboardController::class, 'settings'])->name('settings');
 });
 
 require __DIR__.'/auth.php';

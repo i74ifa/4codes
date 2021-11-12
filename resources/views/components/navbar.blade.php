@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-12">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
@@ -20,22 +20,10 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
-                <a href="{{ route('login') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-xl w-5" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                      </svg>
-                      <span>
-                        {{ __('Login') }}
-                    </span>
-                </a>
-                <a href="{{ route('register') }}" class="inline-flex items-center gap-x-1 text-gray-500 hover:text-gray-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="text-white bg-gray-900 p-1 rounded-xl w-5" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                    </svg>
-                      {{ __('Register') }}
-                  </span>
-              </a>
+                <x-a color="green" href="{{ route('register') }}" rounded>
+                        {{ __('Register') }}
+                </x-a>
+                <a href="{{ route('login') }}" class="py-1 px-4 text-black bg-gray-100 focus:outline-none focus:ring-2  focus:ring-opacity-75">{{ __('Log in') }}</a>
             </div>
 
             <!-- Hamburger -->

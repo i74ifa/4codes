@@ -26,6 +26,9 @@ switch ($color) {
     case 'basic':
             $color = 'bg-basic-400 hover:opacity-110';
         break;
+    case 'green':
+            $color = 'bg-green-500 hover:bg-green-600 focus:bg-green-700';
+        break;
 
 }
 @endphp

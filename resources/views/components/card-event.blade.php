@@ -1,5 +1,5 @@
 @props(['titleCard', 'icon' => '', 'content' => '', 'href' => '#'])
-<a  href="{{ $href }}" {{ $attributes->merge(['class' => 'rounded-lg bg-white shadow hover:shadow-xl duration-200 relative select-none']) }}>
+<a  href="{{ $href }}" {{ $attributes->merge(['class' => 'rounded-lg bg-white shadow-md hover:shadow duration-200 relative select-none']) }}>
     <div class="w-full flex justify-center py-4">
         {{ $icon }}
     </div>

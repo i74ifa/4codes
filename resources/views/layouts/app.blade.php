@@ -17,21 +17,28 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
+    @php
+        $dir = (App::isLocale('ar') == 'ar') ? 'rtl' : 'ltr'
+    @endphp
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+            <div class="lg:flex">
+                <div class="lg:flex-1 flex flex-col">
+                    @include('layouts.navigation')
+                    <!-- Page Heading -->
+                    <header class="bg-white shadow" dir="{{ $dir }}">
+                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                            {{ $header }}
+                        </div>
+                    </header>
+                    <!-- Page Content -->
+                    <main dir="{{ $dir }}" class="max-h-full overflow-y-auto flex-1">
+                        {{ $slot }}
+                    </main>
                 </div>
-            </header>
+                @include('layouts.side-nav')
+            </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
         </div>
     </body>
 </html>

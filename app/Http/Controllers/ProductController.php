@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\DashboardSetting;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Pipeline\Pipeline;
@@ -38,9 +39,12 @@ class ProductController extends Controller
     public function all()
     {
         $products = Product::allProducts();
+        $popular = Product::whereIn('id',
+        json_decode(DashboardSetting::setting('popular_product')->data)
+        )->get();
         $categories = Category::all();
 
-        return view('welcome', compact('products', 'categories'));
+        return view('welcome', compact('products', 'categories', 'popular'));
     }
 
     public function delete($id)
@@ -56,5 +60,12 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         return view('product.create', compact('categories'));
+    }
+
+    public function search(Request $request)
+    {
+        $title = $request->title;
+        return Product::where('title', 'LIKE', "%$title%")->limit(10)->get();
+
     }
 }

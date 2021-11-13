@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
             'role' => 1,
             'email' => 'admin@admin'
         ]);
-        // \App\Models\User::factory(10)->create();
+
+        $this->call([
+            SettingsSeeder::class
+        ]);
+        \App\Models\Category::factory(4)->create();
     }
 }

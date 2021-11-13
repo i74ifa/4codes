@@ -10,5 +10,7 @@ return [
     "are sure delete" => 'هل انت متاكد من حذف',
     "content source code and about source code..." => " محتوى السورس و تفاصيله...",
     "welcome" => 'السلام عليكم',
-    "intro" => 'مهتم بـ'
+    "intro" => 'مهتم بـ',
+    'product that appear in the popular section' => 'الصور التي تظهر في قسم رائج',
+    'use png photo' => 'استخدم png للصورة'
 ];

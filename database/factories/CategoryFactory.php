@@ -13,8 +13,9 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+        $ar = ['ايفون', 'اندرويد', 'انظمة', 'اكواد'];
         return [
-            'name' => $this->faker->text(10)
+            'name' => $ar[array_rand($ar)]
         ];
     }
 }

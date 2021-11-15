@@ -23,7 +23,7 @@
                 @guest
                 <x-a color="green" href="{{ route('register') }}" rounded>
                     <span class="eva eva-person-add-outline text-lg"></span>
-                    {{ __('Register') }}d
+                    {{ __('Register') }}
                 </x-a>
                 <a href="{{ route('login') }}"
                     class="py-1 px-4 text-black bg-gray-100 focus:outline-none focus:ring-2  focus:ring-opacity-75">

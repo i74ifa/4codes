@@ -31,7 +31,7 @@ class Product extends Model
             \App\Filters\CategoryId::class,
         ])
         ->thenReturn()
-        ->paginate(9);
+        ->paginate(12);
     }
 
     public function sending()

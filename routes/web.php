@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\ProductController::class, 'all']);
 
+
+// Dashboard
 Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(function() {
     Route::prefix('category')->name('category.')->group(function() {
         Route::get('create', [App\Http\Controllers\CategoryController::class, 'show'])->name('createShow');
@@ -26,10 +28,11 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(functi
     });
 
     Route::prefix('products')->name('products.')->group(function() {
-        Route::post('create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
-        Route::get('create', [App\Http\Controllers\ProductController::class, 'createShow'])->name('createShow');
-        Route::post('delete/{id?}', [App\Http\Controllers\ProductController::class, 'delete'])->name('delete');
-        Route::get('search', [App\Http\Controllers\ProductController::class, 'search'])->name('search');
+        Route::post('create', [App\Http\Controllers\Dashboard\ProductController::class, 'create'])->name('create');
+        Route::get('create', [App\Http\Controllers\Dashboard\ProductController::class, 'createShow'])->name('createShow');
+        Route::post('delete/{id?}', [App\Http\Controllers\Dashboard\ProductController::class, 'delete'])->name('delete');
+        Route::get('search', [App\Http\Controllers\Dashboard\ProductController::class, 'search'])->name('search');
+        Route::get('all', [App\Http\Controllers\Dashboard\ProductController::class, 'all'])->name('all');
     });
     Route::get('/', [App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
     Route::get('settings', [App\Http\Controllers\DashboardController::class, 'settings'])->name('settings');

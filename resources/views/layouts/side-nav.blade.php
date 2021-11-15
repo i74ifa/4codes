@@ -1,7 +1,9 @@
 <div class="h-screen bg-gray-800 py-2 px-4 fixed transform translate-x-full duration-300 lg:translate-x-0 inset-y-0 right-0 lg:sticky w-72"
-    dir="{{ $dir }}">
-    <div class="text-3xl font-bold my-2 mb-6 text-gray-200 new-font">
-        {{ config('app.name') }}
+    dir="{{ $dir }}" x-data="{ open: false }"
+    :class="open == true ? 'translate-x-0' : 'translate-x-full' " @open-side-bar.window="if ($event.detail.id == 1) open = true">
+    <div class="text-3xl font-bold my-2 mb-6 text-gray-200 new-font flex justify-between">
+        <span>{{ config('app.name') }}</span>
+        <button class="eva eva-arrow-ios-forward-outline lg:hidden" @click="open = false"></button>
     </div>
     <ul dir="{{ $dir }}">
         <li class="mb-6">
@@ -98,9 +100,9 @@
                     <i class=" eva eva-plus text-lg align-middle"></i>
                     <span class="align-middle">{{ __('new') }}</span>
                 </x-a-link-side>
-                <x-a-link-side :href="route('dashboard.category.all')" class="py-1 px-6">
+                <x-a-link-side :href="route('dashboard.products.all')" class="py-1 px-6">
                     <i class=" eva eva-grid text-lg align-middle"></i>
-                    <span class="align-middle">{{ __('All Categories') }}</span>
+                    <span class="align-middle">{{ __('All Products') }}</span>
                 </x-a-link-side>
             </div>
         </li>

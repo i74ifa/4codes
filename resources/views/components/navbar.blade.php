@@ -23,7 +23,7 @@
                 @guest
                 <x-a color="green" href="{{ route('register') }}" rounded>
                     <span class="eva eva-person-add-outline text-lg"></span>
-                    {{ __('Register') }}
+                    {{ __('Register') }}d
                 </x-a>
                 <a href="{{ route('login') }}"
                     class="py-1 px-4 text-black bg-gray-100 focus:outline-none focus:ring-2  focus:ring-opacity-75">
@@ -92,11 +92,12 @@
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
+            @guest
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ __('Log in') }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ 'Register' }}</div>
+                <a href="{{ route('login') }}" class="block font-medium text-base text-gray-600 py-1">{{ __('Log in') }}</a>
+                <a href="{{ route('register') }}" class="block font-medium text-base text-gray-600 py-1">{{ 'Register' }}</a>
             </div>
-
+            @else
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
@@ -108,6 +109,7 @@
                     </x-responsive-nav-link>
                 </form>
             </div>
+            @endguest
         </div>
     </div>
 </nav>

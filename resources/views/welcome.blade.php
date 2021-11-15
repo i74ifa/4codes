@@ -15,7 +15,7 @@
                             </select>
                         </div>
                     </div>
-                    <input type="text" name="title" placeholder="بحث..."
+                    <input type="text" name="title" placeholder="{{ __('messages.like: squid game') }}"
                         class="w-full py-2 shadow-sm border-gray-100 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                     <button type="submit" class="bg-gray-200 px-2 md:px-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -32,9 +32,11 @@
         <div class="w-full">
             <div class="-mx-1 sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2">
                 <div class="flex flex-wrap justify-center gap-y-3">
+                    <a href="/"
+                        class="bg-white border shadow-md px-5 py-3 select-none hover:shadow-lg hover:bg-gray-100 cursor-pointer">
+                    {{ __('All Products') }}</a>
                     @foreach ($categories as $category)
-
-                    <a href="?category_id={{ $category->id }}"
+                    <a href="?category_id={{ $category->id }}&category_name={{ $category->name }}"
                         class="bg-white border shadow-md px-5 py-3 select-none hover:shadow-lg hover:bg-gray-100 cursor-pointer">
                         {{ $category->name }}
                     </a>
@@ -47,8 +49,12 @@
         <div class="w-full flex justify-center">
             <div class="lg:w-4/5 px-3">
                 <h1 class="text-xl py-3 font-bold text-gray-500">
-                    <i class="eva eva-file text-green-400 align-middle"></i>
-                    {{ __('All Products') }}
+                    @if (request()->has('category_name'))
+                    {{ request()->get('category_name') }}
+                    @else
+                        <i class="eva eva-file text-green-400 align-middle"></i>
+                        {{ __('All Products') }}
+                    @endif
                 </h1>
                 <div class="flex flex-wrap -mx-1 sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2">
                     @foreach ($products as $product)
@@ -62,6 +68,9 @@
                     ></x-card>
                     @endforeach
                 </div>
+                @if (! $products->count())
+                    <h1 class="text-center py-2 text-red-600 text-lg font-bold">{{ __('no items') }} !!</h1>
+                @endif
                 @if ($popular->count())
                 <h1 class="text-2xl font-bold text-gray-500 inline-flex pt-7 pb-3">
                     <svg class="w-6 h-6 mt-1 text-red-500" fill="currentColor" viewBox="0 0 20 20"

@@ -9,7 +9,7 @@
             </div>
             <hr>
             <div class="flex justify-between">
-                <a href="#" value="button"
+                <a href="{{ $cardDetail }}" value="button"
                     class="my-4 px-2 py-0.5 text-dark hover:bg-gray-100 rounded-none bg-gray-50 border shadow">
                     {{ $cardPrice . __('YER') }}</a>
                 <button value="button" class="my-4 px-2 py-0.5 text-dark">{{ $cardCategory }}</button>

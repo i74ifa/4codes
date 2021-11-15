@@ -1098,12 +1098,6 @@ select {
 .w-8 {
 	width: 2rem;
 }
-.w-2\/3 {
-	width: 66.666667%;
-}
-.w-1\/3 {
-	width: 33.333333%;
-}
 .w-28 {
 	width: 7rem;
 }
@@ -1602,10 +1596,6 @@ select {
 	font-size: 0.75rem;
 	line-height: 1rem;
 }
-.text-5xl {
-	font-size: 3rem;
-	line-height: 1;
-}
 .text-4xl {
 	font-size: 2.25rem;
 	line-height: 2.5rem;
@@ -1707,10 +1697,6 @@ select {
 .text-green-600 {
 	--tw-text-opacity: 1;
 	color: rgba(5, 150, 105, var(--tw-text-opacity));
-}
-.text-green-500 {
-	--tw-text-opacity: 1;
-	color: rgba(16, 185, 129, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
@@ -2280,11 +2266,6 @@ p, div, section, input, textarea, button, a {
 	.md\:px-3 {
 		padding-left: 0.75rem;
 		padding-right: 0.75rem;
-	}
-
-	.md\:px-5 {
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
 	}
 }
 @media (min-width: 1024px) {

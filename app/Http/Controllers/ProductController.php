@@ -22,9 +22,10 @@ class ProductController extends Controller
         return view('welcome', compact('products', 'categories', 'popular'));
     }
 
-    public function singleProduct($id)
+    public function singleProduct(int $id)
     {
-        return view('product.detail');
+        $product = Product::find($id);
+        return view('product.detail', compact('product'));
     }
 
 

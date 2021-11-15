@@ -22,11 +22,14 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
                 @guest
                 <x-a color="green" href="{{ route('register') }}" rounded>
+                    <span class="eva eva-person-add-outline text-lg"></span>
                     {{ __('Register') }}
                 </x-a>
                 <a href="{{ route('login') }}"
-                    class="py-1 px-4 text-black bg-gray-100 focus:outline-none focus:ring-2  focus:ring-opacity-75">{{
-                    __('Log in') }}</a>
+                    class="py-1 px-4 text-black bg-gray-100 focus:outline-none focus:ring-2  focus:ring-opacity-75">
+                    <span class="eva eva-person-done-outline text-lg"></span>
+                    {{__('Log in') }}
+                </a>
                 @endguest
                 @auth
                 <div class="flex items-center ml-6">

@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            SettingsSeeder::class
+            SettingsSeeder::class,
+            CategorySeeder::class,
         ]);
-        \App\Models\Category::factory(4)->create();
+        // \App\Models\Category::factory(4)->create();
     }
 }

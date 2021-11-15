@@ -8,6 +8,7 @@
                         <div>
                             <select name="category_id"
                                 class="bg-gray-200 py-3 focus:ring-indigo-500 focus:border-indigo-500 h-full pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm">
+                                <option value="">{{ __('All Categories') }}</option>
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach

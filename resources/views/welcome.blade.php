@@ -61,6 +61,7 @@
                     ></x-card>
                     @endforeach
                 </div>
+                @if ($popular->count())
                 <h1 class="text-2xl font-bold text-gray-500 inline-flex pt-7 pb-3">
                     <svg class="w-6 h-6 mt-1 text-red-500" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +82,7 @@
                     ></x-card>
                     @endforeach
                 </div>
+                @endif
             </div>
         </div>
         <div class="flex justify-center py-5">

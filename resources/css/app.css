@@ -58,3 +58,8 @@ p, div, section, input, textarea, button, a {
     background-color: red
     ;
 }
+
+
+.eva {
+    vertical-align: middle;
+}

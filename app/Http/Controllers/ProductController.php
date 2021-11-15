@@ -22,5 +22,10 @@ class ProductController extends Controller
         return view('welcome', compact('products', 'categories', 'popular'));
     }
 
+    public function singleProduct($id)
+    {
+        return view('product.detail');
+    }
+
 
 }

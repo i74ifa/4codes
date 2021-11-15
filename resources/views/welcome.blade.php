@@ -45,10 +45,10 @@
     </section>
     <section id="codes" class="container mx-auto">
         <div class="w-full flex justify-center">
-            <div class="lg:w-4/5">
-                <h1 class="text-2xl font-bold text-gray-500">
+            <div class="lg:w-4/5 px-3">
+                <h1 class="text-xl py-3 font-bold text-gray-500">
                     <i class="eva eva-file text-green-400 align-middle"></i>
-                    جديدنا
+                    {{ __('All Products') }}
                 </h1>
                 <div class="flex flex-wrap -mx-1 sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2">
                     @foreach ($products as $product)
@@ -58,6 +58,7 @@
                         :card-price="$product->price"
                         :card-category="$product->category->name"
                         :card-sending="$product->sending()"
+                        :card-detail="route('product.details', $product->id)"
                     ></x-card>
                     @endforeach
                 </div>
@@ -79,6 +80,7 @@
                         :card-price="$p->price"
                         :card-category="$p->category->name"
                         :card-sending="$p->sending()"
+                        :card-detail="route('product.details', $p->detail)"
                     ></x-card>
                     @endforeach
                 </div>

@@ -17,6 +17,14 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+    public static function HOME()
+    {
+        if (request()->user()->role > 1){
+            return '/';
+        }
+
+        return '/dashboard';
+    }
     public const HOME = '/dashboard';
 
     /**

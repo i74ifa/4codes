@@ -89,7 +89,7 @@
                         :card-price="$p->price"
                         :card-category="$p->category->name"
                         :card-sending="$p->sending()"
-                        :card-detail="route('product.details', $p->detail)"
+                        :card-detail="route('product.details', $p->id)"
                     ></x-card>
                     @endforeach
                 </div>

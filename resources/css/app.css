@@ -1,7 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
 body {
     background: #efefef;
     font-family: "Cairo", sans-serif;

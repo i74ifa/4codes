@@ -21,7 +21,7 @@
             <div class="cards md:w-1/3">
                 <div class="h-48 bg-white shadow border px-7 py-4">
                     <div class="flex justify-between">
-                        <h1 class="text-2xl text-gray-600 font-bold">السعر</h1>
+                        <h1 class="text-2xl text-gray-600 font-bold">{{ __('Price') }}</h1>
                         <h1 class="text-3xl text-gray-600 font-bold">{{ $product->price }} <span class="text-xl">{{ __('YER') }}</span></h1>
                     </div>
                     <div class="text-xs text-gray-500 py-3">

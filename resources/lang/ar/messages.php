@@ -13,5 +13,5 @@ return [
     "intro" => 'مهتم بـ',
     'product that appear in the popular section' => 'الصور التي تظهر في قسم رائج',
     'use png photo' => 'استخدم png للصورة',
-    "like: squid game" => "مثل: لعبة الحبار"
+    "like: squid game" => "مثل: موقع برامج"
 ];

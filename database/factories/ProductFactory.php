@@ -18,7 +18,7 @@ class ProductFactory extends Factory
             'title' => $this->faker->realText(35),
             'image' => $ar[array_rand($ar)],
             'price' => random_int(1000, 10000),
-            'details' => $this->faker->realText(),
+            'details' => $this->faker->realText(1000),
             'category_id' => random_int(1, 4),
         ];
     }

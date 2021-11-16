@@ -18,3 +18,6 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 ]).options({
     processCssUrls: true,
 });
+
+
+mix.js('resources/js/cdn.js', 'public/js').postCss('resources/css/cdn.css', 'public/css');

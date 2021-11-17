@@ -47,6 +47,7 @@ class ProductController extends Controller
             'details' => 'required',
             'image' => 'nullable|file'
         ]);
+        // dd(htmlentities($request->details));
         // dd($request->input());
         $file = $request->file('image')->store('products');
 

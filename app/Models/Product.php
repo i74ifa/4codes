@@ -6,7 +6,7 @@ use App\Sending;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pipeline\Pipeline;
-
+use Parsedown;
 class Product extends Model
 {
     use HasFactory;
@@ -29,6 +29,7 @@ class Product extends Model
         ->through([
             \App\Filters\Title::class,
             \App\Filters\CategoryId::class,
+            \App\Filters\DefaultSort::class,
         ])
         ->thenReturn()
         ->paginate(12);
@@ -40,5 +41,10 @@ class Product extends Model
             'title' => $this->title,
             'id' => $this->id
         ]);
+    }
+
+    public function parseDetails()
+    {
+        return Parsedown::instance()->text($this->details);
     }
 }

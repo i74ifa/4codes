@@ -1,4 +1,9 @@
 <x-app-layout>
+    <style>
+        .CodeMirror-scroll {
+            direction: rtl
+        }
+    </style>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -13,9 +18,9 @@
                     <div class="p-6 bg-white border-b border-gray-200" dir="rtl">
                         <h1 class="text-2xl text-center border-b">{{ __('Add Product') }}</h1>
                         @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <p class="text-red-400">{{ $error }}</p>
-                        @endforeach
+                            @foreach ($errors->all() as $error)
+                                <p class="text-red-400">{{ $error }}</p>
+                            @endforeach
                         @endif
                         <div class="py-2">
                             <x-label for="title" :value="__('Title')" />
@@ -26,11 +31,10 @@
 
                         <div class="py-2">
                             <x-label for="details" :value="__('Details')" />
-                            <div class="@error('title') is-invalid relative @enderror">
-                            <x-textarea type="text" name="details" id="details" class="w-full bg-gray-50"
-                                :placeholder="__('like:') . ' ' . __('messages.content source code and about source code...')">
-                            </x-textarea>
-                            </div>
+                            <div class="@error('title') is-invalid relative @enderror parsedown">
+                                <textarea type="text" dir="auto" name="details" id="details"
+                                    :placeholder="__('like:') . ' ' . __('messages.content source code and about source code...')"></textarea>
+                                </div>
                         </div>
 
                         <div class=" py-2">
@@ -91,4 +95,15 @@
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <script>
+        let el = document.getElementById("details")
+        const easyMDE = new EasyMDE({
+            showIcons: ["code", "table", "direction"],
+            element: el,
+            autofocus: true,
+            direction: "rtl",
+        });
+    </script>
 </x-app-layout>

@@ -14,9 +14,7 @@ class ProductController extends Controller
     public function all()
     {
         $products = Product::allProducts();
-        $popular = Product::whereIn('id',
-        json_decode(DashboardSetting::setting('popular_product')->data)
-        )->get();
+        $popular = Product::whereIn('id', json_decode(DashboardSetting::setting('popular_product')->data))->get();
         $categories = Category::all();
 
         return view('welcome', compact('products', 'categories', 'popular'));

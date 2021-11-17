@@ -62,3 +62,35 @@ p, div, section, input, textarea, button, a {
 .eva {
     vertical-align: middle;
 }
+@layer base {
+
+    .parsedown h1, h2, h3, h4, h5, h6 {
+        @apply block font-bold mx-0
+    }
+
+    .parsedown h1 {
+      @apply text-4xl mt-3 mb-3;
+    }
+    .parsedown h2 {
+        @apply text-3xl my-5;
+    }
+    .parsedown h3 {
+        @apply text-2xl my-4;
+    }
+    .parsedown h4 {
+        @apply text-lg  my-6;
+    }
+    .parsedown h5 {
+        @apply text-base my-9;
+    }
+
+    .parsedown ol {
+        @apply block my-4 mx-0 px-10;
+        list-style-type: revert;
+
+    }
+    .parsedown ul {
+        @apply block  list-disc my-4 mx-0 px-10
+    }
+
+}

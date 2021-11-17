@@ -14,8 +14,9 @@
         <div class="block md:flex gap-x-5 px-4 md:px-2">
             <div class="md:w-2/3">
                 <img src="{{ asset($product->image) }}">
-                <div class="block pt-7">
-                    {{ $product->details }}
+                <div class="block pt-7 parsedown">
+                    {{-- {{ $product->details }} --}}
+                    {!! $product->parseDetails() !!}
                 </div>
             </div>
             <div class="cards md:w-1/3">

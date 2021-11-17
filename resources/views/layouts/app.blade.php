@@ -12,13 +12,6 @@
         <link rel="stylesheet" href="{{ asset('css/eva-icons.css') }}">
 
         <!-- CDN -->
-        @if (config('app.env') == 'production')
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-            <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-        @else
-            <link rel="stylesheet" href="{{ asset('css/cdn.css') }}">
-            <script src="{{ asset('js/cdn.js') }}"></script>
-        @endif
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">

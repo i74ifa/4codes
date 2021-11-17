@@ -1103,6 +1103,9 @@ select {
 .h-48 {
 	height: 12rem;
 }
+.h-40 {
+	height: 10rem;
+}
 .max-h-60 {
 	max-height: 15rem;
 }
@@ -2273,6 +2276,10 @@ p, div, section, input, textarea, button, a {
 
 	.md\:h-96 {
 		height: 24rem;
+	}
+
+	.md\:h-40 {
+		height: 10rem;
 	}
 
 	.md\:w-1\/2 {

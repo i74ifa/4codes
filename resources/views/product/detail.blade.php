@@ -13,7 +13,25 @@
     <div class="container max-w-6xl mx-auto py-5">
         <div class="block md:flex gap-x-5 px-4 md:px-2">
             <div class="md:w-2/3">
-                <img src="{{ asset($product->images[0]->path ?? '') }}">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        @foreach ($product->images as $image)
+                            <div class="swiper-slide">
+                                <img src="{{ asset($image->path) }}" />
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($product->images as $image)
+                            <div class="swiper-slide">
+                                <img src="{{ asset($image->path) }}" />
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
                 <div class="block pt-7 parsedown">
                     {!! $product->parseDetails() !!}
                 </div>
@@ -22,7 +40,8 @@
                 <div class="h-48 bg-white shadow border px-7 py-4">
                     <div class="flex justify-between">
                         <h1 class="text-2xl text-gray-600 font-bold">{{ __('Price') }}</h1>
-                        <h1 class="text-3xl text-gray-600 font-bold">{{ $product->price }} <span class="text-xl">{{ __('YER') }}</span></h1>
+                        <h1 class="text-3xl text-gray-600 font-bold">{{ $product->price }} <span class="text-xl">
+                                {{ __('YER') }}</span></h1>
                     </div>
                     <div class="text-xs text-gray-500 py-3">
                         <h6> <span class="eva eva-checkmark-circle-2 text-green-600 text-sm"></span> {{ __('High Quality') }}</h6>
@@ -34,5 +53,26 @@
             </div>
         </div>
     </div>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+            pagination: {
+                el: ".swiper-pagination"
+            }
+        });
+    </script>
 
 </x-guest-layout>

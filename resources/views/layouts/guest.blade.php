@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="{{ asset('css/eva-icons.css') }}">
 
     <!-- Styles -->
+
+    @if (config('app.env') == 'local')
+        <script src="{{ asset('js/cdn.js') }}"></script>
+    @else
+    @endif
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
@@ -24,13 +31,13 @@
 </head>
 
 @php
-    $dir = (App::isLocale('ar') == 'ar') ? 'rtl' : 'ltr'
+$dir = App::isLocale('ar') == 'ar' ? 'rtl' : 'ltr';
 @endphp
 
 <body class="bg-gradient-to-tr">
     <div dir="{{ $dir }}">
         <x-navbar></x-navbar>
-        @isset ($header)
+        @isset($header)
             <header class="bg-white shadow">
                 <div class="">
                     {{ $header ?? '' }}

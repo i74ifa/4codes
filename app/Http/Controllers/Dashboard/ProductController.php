@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 use App\Models\DashboardSetting;
+use App\Models\Image;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -45,20 +46,24 @@ class ProductController extends Controller
             'price' => 'integer|required',
             'category_id' => 'required',
             'details' => 'required',
-            'image' => 'nullable|file'
+            'image' => 'nullable'
         ]);
-        // dd(htmlentities($request->details));
-        // dd($request->input());
-        $file = $request->file('image')->store('products');
-
-        Product::create([
+        $product = Product::create([
             'title' => $request->title,
             'price' => $request->price,
             'details' => $request->details,
             'category_id' => $request->category_id,
-            'image' => $file,
         ]);
 
+
+        foreach ($request->file('image') as $file) {
+            $image = new Image();
+            $file = $file->store('products');
+            $image->path = $file;
+            $image->product_id = $product->id;
+
+            $image->save();
+        }
         return back();
 
 

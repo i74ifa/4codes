@@ -13,7 +13,7 @@ class Product extends Model
 
 
     protected $fillable = [
-        'title', 'image', 'price', 'category_id', 'details'
+        'title', 'price', 'category_id', 'details'
     ];
 
 
@@ -46,5 +46,10 @@ class Product extends Model
     public function parseDetails()
     {
         return Parsedown::instance()->text($this->details);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 }

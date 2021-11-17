@@ -13,9 +13,8 @@
     <div class="container max-w-6xl mx-auto py-5">
         <div class="block md:flex gap-x-5 px-4 md:px-2">
             <div class="md:w-2/3">
-                <img src="{{ asset($product->image) }}">
+                <img src="{{ asset($product->images[0]->path ?? '') }}">
                 <div class="block pt-7 parsedown">
-                    {{-- {{ $product->details }} --}}
                     {!! $product->parseDetails() !!}
                 </div>
             </div>

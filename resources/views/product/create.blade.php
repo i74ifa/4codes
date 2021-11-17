@@ -86,7 +86,7 @@
                                     </svg>
                                 </i>
                                 <span class="mt-2 text-base leading-normal">{{ __('Image Product') }}</span>
-                                <input type="file" class="hidden" name="image" id="image" />
+                                <input type="file" class="hidden" multiple name="image[]" id="image" />
                             </label>
                         </div>
                         <x-button rounded class=" shadow w-full">{{ __('Save') }}</x-button>

@@ -23,11 +23,11 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <div thumbsSlider="" class="swiper mySwiper">
+                <div thumbsSlider="" class="swiper mySwiper py-2">
                     <div class="swiper-wrapper">
                         @foreach ($product->images as $image)
-                            <div class="swiper-slide">
-                                <img src="{{ asset($image->path) }}" />
+                            <div class="swiper-slide cursor-pointer">
+                                <img src="{{ asset($image->path) }}" class="transform brightness-50" />
                             </div>
                         @endforeach
                     </div>
@@ -44,13 +44,13 @@
                                 {{ __('YER') }}</span></h1>
                     </div>
                     <div class="text-xs text-gray-500 py-3">
-                        <h6> <span class="eva eva-checkmark-circle-2 text-green-600 text-sm"></span> {{ __('High Quality') }}</h6>
-                        <h6> <span class="eva eva-checkmark-circle-2 text-green-600 text-sm"></span> {{ __('Support by website') }}</h6>
-                        <h6> <span class="eva eva-checkmark-circle-2 text-green-600 text-sm"></span> {{ __('Future Update') }}</h6>
+                        <h6> <span class="eva eva-checkmark-circle-2 text-gray-600 text-sm"></span> {{ __('High Quality') }}</h6>
+                        <h6> <span class="eva eva-checkmark-circle-2 text-gray-600 text-sm"></span> {{ __('Support by website') }}</h6>
+                        <h6> <span class="eva eva-checkmark-circle-2 text-gray-600 text-sm"></span> {{ __('Future Update') }}</h6>
                     </div>
-                    <x-a color="green" rounded href="{{ $product->sending() }}" class="w-full text-center shadow-lg">{{ __('Order') }}</x-a>
+                    <x-a color="dark" rounded href="{{ $product->sending() }}" class="w-full text-center shadow-lg">{{ __('Order') }}</x-a>
                 </div>
-                <div class="h-auto bg-gradient-to-t to-green-300 from-green-500 shadow my-3 text-white px-7 py-4">
+                <div class="h-auto bg-gradient-to-t pb-5 to-purple-400 from-purple-500 shadow-lg my-3 text-white px-7 py-4">
                     <h3 class="bg-gray-900 bg-opacity-25 font-bold py-0.5 w-1/2 mx-auto text-center rounded-full select-none">متوفر</h3>
                     <div class="py-5 w-full h-40">
                         <img src="{{ asset('img/undraw_dev_productivity_umsq.svg') }}" class="w-full h-full ">
@@ -58,7 +58,7 @@
                     <h1 class="text-center text-sm px-5">
                         كورس لشرح كيفية تم انشاء هذا الكود
                     </h1>
-                    <x-a href="#" color="green" rounded class="border w-full text-center shadow-none mt-2">طلب</x-a>
+                <x-a href="#" color="purple" rounded class="border w-full text-center shadow-none mt-2">{{ __('Submit') }}</x-a>
                 </div>
             </div>
         </div>

@@ -94,3 +94,9 @@ p, div, section, input, textarea, button, a {
     }
 
 }
+
+
+
+.swiper-slide-thumb-active img {
+    @apply brightness-100
+}

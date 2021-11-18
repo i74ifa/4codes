@@ -52,4 +52,9 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function image()
+    {
+        return $this->images->where('rank', 0)->first();
+    }
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DashboardSetting;
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\DashboardSetting;
 
 class DashboardController extends Controller
 {
@@ -54,6 +55,8 @@ class DashboardController extends Controller
 
     public function show()
     {
-        return view('dashboard');
+        $summary['users'] = User::all()->count();
+        $summary['items'] = Product::count();
+        return view('dashboard', compact('summary'));
     }
 }

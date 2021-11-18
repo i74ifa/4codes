@@ -14,8 +14,8 @@
             <h3 class="text-center text-red-500">{{ __('messages.are sure delete') }}</h3>
             <div class="inline-flex justify-center w-full pt-5 pb-2">
                 <input type="number" id="modal-product-id" hidden>
-                <x-button class="product_delete_confirm rounded-r-none mx-0" @click="open = false">{{ __('Confirm') }}</x-button>
-                <x-button class="rounded-l-none mx-0" @click="open = false">{{ __('Cancel') }}</x-button>
+                <x-button class="product_delete_confirm rounded-l-none mx-0" @click="open = false">{{ __('Confirm') }}</x-button>
+                <x-button class="rounded-r-none mx-0" @click="open = false">{{ __('Cancel') }}</x-button>
             </div>
         </div>
     </x-modal>
@@ -34,7 +34,7 @@
                         @foreach ($products as $product)
                         <div id="product-{{ $product->id }}" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-full md:my-3 md:px-3 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 xl:my-4 xl:px-4 xl:w-1/3">
                             <div class="border w-full md:w-72 justify-center items-center bg-white shadow-md rounded-lg flex flex-col">
-                                <img src="{{ asset($product->image) }}" alt="img" title="img" class="w-full h-auto object-cover rounded-t-lg">
+                                <img src="{{ asset($product->image()->path) }}" alt="img" title="img" class="w-full h-auto object-cover rounded-t-lg">
                                 <div class="w-full pt-5 px-2 justify-start flex flex-col">
                                     <h4 class="text-xl">{{ $product->title }}</h4>
                                     <hr>

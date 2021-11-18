@@ -51,7 +51,7 @@
                     <x-a color="green" rounded href="{{ $product->sending() }}" class="w-full text-center shadow-lg">{{ __('Order') }}</x-a>
                 </div>
                 <div class="h-auto bg-gradient-to-t to-green-300 from-green-500 shadow my-3 text-white px-7 py-4">
-                    <h3 class="bg-gray-900 bg-opacity-25 font-bold py-0.5 w-1/2 mx-auto text-center rounded-full">متوفر</h3>
+                    <h3 class="bg-gray-900 bg-opacity-25 font-bold py-0.5 w-1/2 mx-auto text-center rounded-full select-none">متوفر</h3>
                     <div class="py-5 w-full h-40">
                         <img src="{{ asset('img/undraw_dev_productivity_umsq.svg') }}" class="w-full h-full ">
                     </div>

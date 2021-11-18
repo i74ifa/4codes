@@ -59,7 +59,7 @@
                 <div class="flex flex-wrap -mx-1 sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2">
                     @foreach ($products as $product)
                     <x-card
-                        :src="asset($product->image()->path ?? '')"
+                        :src="asset($product->image->path)"
                         :card-title="$product->title"
                         :card-price="$product->price"
                         :card-category="$product->category->name"
@@ -84,7 +84,7 @@
                 <div class="flex flex-wrap -mx-1 sm:-mx-2 md:-mx-2 lg:-mx-2 xl:-mx-2">
                     @foreach ($popular as $p)
                     <x-card
-                        :src="$product->image()->path ?? ''"
+                        :src="$product->image->path"
                         :card-title="$p->title"
                         :card-price="$p->price"
                         :card-category="$p->category->name"

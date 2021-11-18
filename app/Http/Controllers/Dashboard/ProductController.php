@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $title = $request->title;
-        return Product::where('title', 'LIKE', "%$title%")->limit(10)->get();
+        return Product::where('title', 'LIKE', "%$title%")->limit(10)->with('image')->get();
     }
 
     public function create(Request $request)

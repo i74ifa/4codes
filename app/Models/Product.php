@@ -55,6 +55,6 @@ class Product extends Model
 
     public function image()
     {
-        return $this->images->where('rank', 0)->first();
+        return $this->hasOne(Image::class)->where('rank', 1);
     }
 }

@@ -79,7 +79,7 @@
                 let section = $('#section-tbody')
                 section.html('');
                 response.data.forEach((el) => {
-                    let tr = `<x-partial.table-setting-tr :src="asset('${el.image}')" item-title="${el.title}" data-product-id="${el.id}" item-id="${el.id}"></x-partial.table-setting-tr>`
+                    let tr = `<x-partial.table-setting-tr :src="asset('${el.image.path}')" item-title="${el.title}" data-product-id="${el.id}" item-id="${el.id}"></x-partial.table-setting-tr>`
                     section.append(tr);
                 })
                 checkCard();

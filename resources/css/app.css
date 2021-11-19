@@ -1,6 +1,15 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+
+@layer components {
+
+    .placeholder-right::placeholder {
+        @apply text-right ;
+    }
+}
 body {
     background: #efefef;
     font-family: "Cairo", sans-serif;

@@ -1,9 +1,16 @@
 <x-app-layout>
+    @if (App::isLocale('ar'))
     <style>
-        .CodeMirror-scroll {
+        .CodeMirror-scroll *  {
+            direction: rtl
+        }
+
+        .editor-preview-full, editor-preview * {
             direction: rtl
         }
     </style>
+    @endif
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -13,7 +20,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form action="{{ route('dashboard.products.create') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.products.create') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="p-6 bg-white border-b border-gray-200" dir="rtl">
                         <h1 class="text-2xl text-center border-b">{{ __('Add Product') }}</h1>

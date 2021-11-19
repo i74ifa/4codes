@@ -1942,6 +1942,10 @@ select {
 	--tw-shadow: 0 0 #0000;
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-xl {
+	--tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .outline-none {
 	outline: 2px solid transparent;
 	outline-offset: 2px;
@@ -1968,6 +1972,10 @@ select {
 }
 .drop-shadow-xl {
 	--tw-drop-shadow: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08));
+	filter: var(--tw-filter);
+}
+.drop-shadow-2xl {
+	--tw-drop-shadow: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 	filter: var(--tw-filter);
 }
 .transition {

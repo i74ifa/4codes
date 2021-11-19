@@ -1,4 +1,5 @@
-<div x-data="{ open: false }">
+@props(['open' => 'false', 'title', 'evaIcon'])
+<div x-data="{ open: {{ $open }} }">
     <div class="
         relative
         py-2

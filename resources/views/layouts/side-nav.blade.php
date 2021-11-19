@@ -1,5 +1,5 @@
 <div class="h-screen drop-shadow-xl bg-gray-50 py-2 px-4 fixed text-gray-700 transform translate-x-full duration-300 lg:translate-x-0 inset-y-0 right-0 lg:sticky w-72"
-    dir="{{ $dir }}" x-data="{ open: true }"
+    dir="{{ $dir }}" x-data="{ open: false }"
     :class="open == true ? 'translate-x-0' : 'translate-x-full' " @open-side-bar.window="if ($event.detail.id == 1) open = true">
     <div class="text-3xl font-bold my-2 mb-6 text-gray-700 new-font flex justify-between">
         <span>{{ config('app.name') }}</span>
@@ -27,7 +27,6 @@
                 placeholder-right
               " placeholder="بحث" dir="auto" autocomplete="off" @focus="open = true" @focusout="open = false" />
               <div class="absolute w-full py-2 bg-gray-200 z-20 origin-right rounded-b-xl inset-x-0" x-show="open">
-                {{-- <a href="#" class="block py-2 hover:bg-gray-300 px-3">نتيجة واحد</a> --}}
               </div>
             </div>
         </li>
@@ -63,6 +62,20 @@
         <li class="mb-1">
             <x-admin.side-bar-link eva-icon="eva-settings-outline" :link="route('dashboard.settings')">{{ __('Settings') }}
             </x-admin.side-bar-link>
+        </li>
+        <li class="mb-1">
+            <x-admin.side-bar-dropdown :title="Auth::user()->username" eva-icon="eva-person-outline" open="true">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-a-link-side :href="route('logout')" onclick="event.preventDefault();
+                    this.closest('form').submit();" class="py-1 px-6">
+                        <i class=" eva eva-log-out text-lg align-middle"></i>
+                        <span class="align-middle">{{ __('Log Out') }}</span>
+                    </x-a-link-side>
+
+
+                </form>
+            </x-admin.side-bar-dropdown>
         </li>
     </ul>
 </div>

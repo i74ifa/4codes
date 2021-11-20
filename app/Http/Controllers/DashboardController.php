@@ -59,6 +59,7 @@ class DashboardController extends Controller
         $summary['users'] = User::count();
         $summary['items'] = Product::count();
         $summary['categories'] = Category::count();
-        return view('dashboard', compact('summary'));
+        $users = User::paginate(10);
+        return view('dashboard', compact('summary', 'users'));
     }
 }

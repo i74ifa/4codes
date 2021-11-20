@@ -109,3 +109,28 @@ p, div, section, input, textarea, button, a {
 .swiper-slide-thumb-active img {
     @apply brightness-100
 }
+
+
+
+.table-stipe {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-stipe thead {
+    @apply bg-gray-50;
+}
+
+.table-stipe tbody tr {
+    @apply hover:bg-gray-100;
+}
+.table-stipe tbody tr:nth-of-type(odd) {
+    @apply bg-gray-200;
+}
+
+
+
+.table-col {
+    @apply px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+

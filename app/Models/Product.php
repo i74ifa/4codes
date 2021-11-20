@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Sending;
+use Facade\FlareClient\View;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pipeline\Pipeline;
@@ -56,5 +57,10 @@ class Product extends Model
     public function image()
     {
         return $this->hasOne(Image::class)->where('rank', 0);
+    }
+
+    public function views()
+    {
+        return $this->hasMany(Viewer::class);
     }
 }

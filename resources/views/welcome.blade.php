@@ -45,7 +45,20 @@
             </div>
         </div>
     </section>
-    <section id="codes" class="container mx-auto">
+
+    <section id="categories-cards" class="hidden">
+        <div class="container max-w-7xl mx-auto py-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 px-5 lg:px-2 gap-x-6">
+                @for ($i = 0; $i < 3; $i++)
+
+                <x-card-category>
+                </x-card-category>
+                @endfor
+            </div>
+        </div>
+    </section>
+
+    <section id="codes" class="container mx-auto px-3">
         <div class="w-full flex justify-center">
             <div class="lg:w-4/5 px-3">
                 <h1 class="text-xl py-3 font-bold text-gray-500">
@@ -63,7 +76,7 @@
                         :card-title="$product->title"
                         :card-price="$product->price"
                         :card-category="$product->category->name"
-                        :card-sending="$product->sending()"
+                        :card-sending="route('product.order', $product->id)"
                         :card-detail="route('product.details', $product->id)"
                     ></x-card>
                     @endforeach
@@ -88,7 +101,7 @@
                         :card-title="$p->title"
                         :card-price="$p->price"
                         :card-category="$p->category->name"
-                        :card-sending="$p->sending()"
+                        :card-sending="route('product.order', $p->id)"
                         :card-detail="route('product.details', $p->id)"
                     ></x-card>
                     @endforeach

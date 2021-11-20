@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -55,8 +56,9 @@ class DashboardController extends Controller
 
     public function show()
     {
-        $summary['users'] = User::all()->count();
+        $summary['users'] = User::count();
         $summary['items'] = Product::count();
+        $summary['categories'] = Category::count();
         return view('dashboard', compact('summary'));
     }
 }

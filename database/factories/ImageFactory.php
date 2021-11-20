@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProductFactory extends Factory
+class ImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -13,11 +13,9 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $ar = ['img/test/1.png', 'img/test/2.png', 'img/test/3.png', 'img/test/4.png'];
         return [
-            'title' => $this->faker->realText(35),
-            'price' => random_int(1000, 10000),
-            'details' => $this->faker->realText(1000),
-            'category_id' => random_int(1, 4),
+            'path' => $ar[array_rand($ar)]
         ];
     }
 }

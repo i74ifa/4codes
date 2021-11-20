@@ -45,7 +45,7 @@ $dir = App::isLocale('ar') == 'ar' ? 'rtl' : 'ltr';
             </header>
         @endisset
     </div>
-    <div class="font-sans text-gray-900 antialiased" dir="{{ $dir }}">
+    <div class="font-sans text-gray-900 dark:text-white dark:bg-gray-900 antialiased" dir="{{ $dir }}">
         {{ $slot }}
     </div>
     @include('layouts.footer')

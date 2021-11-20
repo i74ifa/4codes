@@ -4,10 +4,10 @@
         <div class="absolute transform translate-y-1/2 -translate-x-1/2 left-1/2 top-1/2 w-11/12 md:w-1/2">
             <form action="">
                 <div class="w-full flex justify-center">
-                    <div class="inline-flex relative bg-gray-200">
+                    <div class="inline-flex relative bg-gray-200 dark:bg-gray-900 dark:text-white">
                         <div>
                             <select name="category_id"
-                                class="bg-gray-200 py-3 focus:ring-indigo-500 focus:border-indigo-500 h-full pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm">
+                                class="bg-gray-200 dark:bg-gray-900 py-3 focus:ring-indigo-500 focus:border-indigo-500 h-full pl-2 pr-7 border-transparent bg-transparent text-gray-500 dark:text-gray-100 sm:text-sm">
                                 <option value="">{{ __('All Categories') }}</option>
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -84,6 +84,9 @@
                 @if (! $products->count())
                     <h1 class="text-center py-2 text-red-600 text-lg font-bold">{{ __('no items') }} !!</h1>
                 @endif
+                <div class="flex justify-center py-5">
+                    {{ $products->appends(request()->input())->links() }}
+                </div>
                 @if ($popular->count())
                 <h1 class="text-2xl font-bold text-gray-500 inline-flex pt-7 pb-3">
                     <svg class="w-6 h-6 mt-1 text-red-500" fill="currentColor" viewBox="0 0 20 20"
@@ -108,9 +111,6 @@
                 </div>
                 @endif
             </div>
-        </div>
-        <div class="flex justify-center py-5">
-            {{ $products->appends(request()->input())->links() }}
         </div>
     </section>
 

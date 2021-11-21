@@ -35,11 +35,12 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(functi
         Route::post('delete/{id?}', [App\Http\Controllers\Dashboard\ProductController::class, 'delete'])->name('delete');
         Route::get('search', [App\Http\Controllers\Dashboard\ProductController::class, 'search'])->name('search');
         Route::get('all', [App\Http\Controllers\Dashboard\ProductController::class, 'all'])->name('all');
+        Route::get('edit/{id}', [App\Http\Controllers\Dashboard\ProductController::class, 'edit'])->name('edit');
+        Route::post('edit/{id}', [App\Http\Controllers\Dashboard\ProductController::class, 'update'])->name('edit');
     });
     Route::get('/', [App\Http\Controllers\DashboardController::class, 'show'])->name('dashboard');
     Route::get('settings', [App\Http\Controllers\DashboardController::class, 'settings'])->name('settings');
     Route::post('settings', [App\Http\Controllers\DashboardController::class, 'changeLogo'])->name('changeLogo');
     Route::post('popular-product', [App\Http\Controllers\DashboardController::class, 'popularProduct'])->name('popularProduct');
 });
-
 require __DIR__.'/auth.php';

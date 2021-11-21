@@ -47,7 +47,7 @@
                                     <x-button data-product-id="{{ $product->id }}" rounded="rounded-none" class="product_delete flex-1 justify-center"
                                     @click="$dispatch('open-model', {id})"
                                     ><i class="text-lg eva eva-trash-2"></i></x-button>
-                                    <x-button rounded="rounded-none" class="flex-1 justify-center"><i class="text-lg eva eva-edit"></i></x-button>
+                                    <x-a :href="route('dashboard.products.edit', $product->id)" rounded="rounded-none" class="flex-1 text-center justify-center"><i class="text-lg eva eva-edit"></i></x-a>
                                 </div>
                             </div>
                         </div>

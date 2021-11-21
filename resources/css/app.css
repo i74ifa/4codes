@@ -67,10 +67,6 @@ p, div, section, input, textarea, button, a {
     ;
 }
 
-
-.eva {
-    vertical-align: middle;
-}
 @layer base {
 
     .parsedown h1, h2, h3, h4, h5, h6 {

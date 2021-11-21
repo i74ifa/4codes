@@ -62,4 +62,16 @@ class DashboardController extends Controller
         $users = User::paginate(10);
         return view('dashboard', compact('summary', 'users'));
     }
+
+
+    public function papularProduct()
+    {
+        return Product::find(1)->views;
+        foreach (Product::all() as $product) {
+            if ($product->views) {
+
+                return $product->views;
+            }
+        }
+    }
 }

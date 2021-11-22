@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Parsedown;
 use App\Sending;
 use Facade\FlareClient\View;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pipeline\Pipeline;
-use Parsedown;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Product extends Model
 {
     use HasFactory;
@@ -62,5 +64,20 @@ class Product extends Model
     public function views()
     {
         return $this->hasMany(Viewer::class);
+    }
+
+    public static function popularOrders(int $limit)
+    {
+        if ($limit == 1) {
+            $get = 'first';
+        }else {
+            $get = 'get';
+        }
+        return Product::select(DB::raw("products.*, count(viewers.id) as orders"))
+        ->leftJoin('viewers', 'viewers.product_id', '=', 'products.id')
+        ->groupBy('products.id')
+        ->orderBy('orders', 'desc')
+        ->limit($limit)
+        ->$get();
     }
 }

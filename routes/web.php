@@ -43,4 +43,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('role')->group(functi
     Route::post('settings', [App\Http\Controllers\DashboardController::class, 'changeLogo'])->name('changeLogo');
     Route::post('popular-product', [App\Http\Controllers\DashboardController::class, 'popularProduct'])->name('popularProduct');
 });
+
+Route::get('test', [App\Http\Controllers\DashboardController::class, 'papularProduct']);
 require __DIR__.'/auth.php';

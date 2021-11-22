@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\DashboardSetting;
+use App\Models\Viewer;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -59,6 +61,8 @@ class DashboardController extends Controller
         $summary['users'] = User::count();
         $summary['items'] = Product::count();
         $summary['categories'] = Category::count();
+        $summary['orders'] = Viewer::count();
+        $summary['bestOrder'] = Product::popularOrders(1);
         $users = User::paginate(10);
         return view('dashboard', compact('summary', 'users'));
     }
@@ -66,12 +70,6 @@ class DashboardController extends Controller
 
     public function papularProduct()
     {
-        return Product::find(1)->views;
-        foreach (Product::all() as $product) {
-            if ($product->views) {
-
-                return $product->views;
-            }
-        }
+        return Product::popularOrders(1)->id;
     }
 }

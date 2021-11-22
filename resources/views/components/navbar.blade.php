@@ -9,7 +9,6 @@
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="/" :active="request()->routeIs('dashboard')">
@@ -20,8 +19,8 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
-                @guest
-                <x-a color="green" href="{{ route('register') }}" rounded>
+                @if (false)
+                <x-a color="green" href="{{ route('register') ?? '' }}" rounded>
                     <span class="eva eva-person-add-outline text-lg"></span>
                     {{ __('Register') }}
                 </x-a>
@@ -30,6 +29,8 @@
                     <span class="eva eva-person-done-outline text-lg"></span>
                     {{__('Log in') }}
                 </a>
+                @endif
+                @guest
                 @endguest
                 @auth
                 <div class="flex items-center ml-6">
@@ -95,7 +96,7 @@
             @guest
             <div class="px-4">
                 <a href="{{ route('login') }}" class="block font-medium text-base text-gray-600 py-1">{{ __('Log in') }}</a>
-                <a href="{{ route('register') }}" class="block font-medium text-base text-gray-600 py-1">{{ 'Register' }}</a>
+                <a href="{{ '' }}" class="block font-medium text-base text-gray-600 py-1">{{ 'Register' }}</a>
             </div>
             @else
             <div class="mt-3 space-y-1">

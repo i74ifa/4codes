@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function delete($id)
     {
-        // Product::find($id)->delete();
+        Product::find($id)->delete();
 
         return response()->json([
             'status' => __('delete Success')

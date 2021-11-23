@@ -1,31 +1,36 @@
 <x-guest-layout>
 
-    <div class="relative md:h-96 h-80 md:overflow-hidden mb-2 bg-banner bg-no-repeat bg-right md:bg-left">
-        <div class="absolute transform translate-y-1/2 -translate-x-1/2 left-1/2 top-1/2 w-11/12 md:w-1/2">
-            <form action="">
-                <div class="w-full flex justify-center">
-                    <div class="inline-flex relative bg-gray-200 dark:bg-gray-900 dark:text-white">
-                        <div>
-                            <select name="category_id"
-                                class="bg-gray-200 dark:bg-gray-900 py-3 focus:ring-indigo-500 focus:border-indigo-500 h-full pl-2 pr-7 border-transparent bg-transparent text-gray-500 dark:text-gray-100 sm:text-sm">
-                                <option value="">{{ __('All Categories') }}</option>
-                                @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
+    <div class="relative md:h-96 h-80 md:overflow-hidden mb-2 bg-gradient-to-l from-purple-400 to-purple-500 md:bg-left flex flex-col items-center justify-center">
+        <div class="py-5 text-2xl transform text-white md:translate-y-2/3 text-center absolute top-0">
+            ابحث عن اكواد PHP واكواد تطبيقات جوال وحتى اضافات
+        </div>
+        <div class="w-full px-5 md:w-1/2">
+            <div class="shadow-lg">
+                <form action="">
+                    <div class="w-full flex justify-center">
+                        <div class="inline-flex relative bg-gray-200 dark:bg-gray-900 dark:text-white">
+                            <div>
+                                <select name="category_id"
+                                    class="bg-gray-200 dark:bg-gray-900 py-3 focus:ring-indigo-500 focus:border-indigo-500 h-full pl-2 pr-7 border-transparent bg-transparent text-gray-500 dark:text-gray-100 sm:text-sm">
+                                    <option value="">{{ __('All Categories') }}</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+                        <input type="text" name="title" placeholder="{{ __('messages.like: squid game') }}"
+                            class="w-full py-2 shadow-sm border-gray-100 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <button type="submit" class="bg-gray-200 px-2 md:px-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
                     </div>
-                    <input type="text" name="title" placeholder="{{ __('messages.like: squid game') }}"
-                        class="w-full py-2 shadow-sm border-gray-100 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                    <button type="submit" class="bg-gray-200 px-2 md:px-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     <section id="categories" class="container mx-auto">

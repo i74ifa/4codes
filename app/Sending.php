@@ -6,7 +6,7 @@ class Sending
 {
 
     protected $hello;
-    protected $phone = '967770694223';
+    protected $phone = '967770263836';
     protected $url = 'https://api.whatsapp.com/send';
 
     public function __construct()
